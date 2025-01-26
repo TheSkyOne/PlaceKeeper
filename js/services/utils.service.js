@@ -8,6 +8,19 @@ export function genId(length = 3) {
 	return id
 }
 
+
+export function saveToStorage(key, val) {
+    const strVal = JSON.stringify(val)
+	localStorage.setItem(key, strVal)
+}
+
+
+export function loadFromStorage(key) {
+	var val = localStorage.getItem(key)
+	return JSON.parse(val)
+}
+
+
 function _getRandomInt(min, max) {
 	min = Math.ceil(min)
 	max = Math.floor(max)
