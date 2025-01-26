@@ -2,8 +2,7 @@ export const storageService = {
     query, // get all entities
     get, // get one entity whose ID matches the given ID
     post, // add a new entity
-    put, // update an existing entity
-    remove, // remove an entity
+    remove // remove an entity
 }
 
 
@@ -27,18 +26,6 @@ async function post(entityType, newEntity){
     _save(entityType, entities)
 }
 
-
-async function put(entityType, updatedEntity){
-    const entities = await query(entityType)
-    const idx = entities.findIndex(entity => entity.id === updatedEntity.id)
-    if (idx < 0) throw new Error(`Update failed, cannot find entity with id: ${entityId} in: ${entityType}`)
-
-    const entityToUpdate = {...entities[idx], ...updatedEntity} // make a new entity object with all the previous entity's info overriden by the new one's
-    entities.splice(idx, 1, entityToUpdate)
-    _save(entityType, entities)
-    
-    return updatedEntity
-}
 
 
 async function remove(entityType, entityId){
