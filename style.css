@@ -95,6 +95,13 @@ gmp-map{
     align-items: center;
 }
 
+.form-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 50px;
+}
 
 .form-element:not(:last-child){
     background-color: burlywood;
@@ -111,4 +118,8 @@ gmp-map{
     width: 100px;
     margin-block-start: 12px;
     color: white;
+}
+
+label{
+    font-size: 18px;
 }
