@@ -1,17 +1,114 @@
 * {
 	box-sizing: border-box;
+    font-family: Georgia;
 }
 
-main{
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: papayawhip;
+}
+
+#title, #subtitle{
+    text-align: center;
+}
+
+#title{
+    font-size: 48pt;
+    margin-block-end: 0px;
+}
+
+#subtitle{
+    font-size: 18pt;
+    font-weight: 500;
+}
+
+nav{
+    text-align: center;
     display: flex;
-    gap: 24px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
 }
 
-/* .map-container{
-    flex-grow: 3;
-} */
+nav a{
+    color: black;
+}
 
-aside{
+nav a:hover{
+    color: darkblue;
+}
+
+nav a:not(:last-child)::after{
+    content: "|";
+    margin-inline-start: 10px;
+    color: black;
+}
+
+.home{
+    margin-block-end: 48px;
+}
+
+#map-section, #prefs-section{
+    scroll-margin-block-start: 24px;
+}
+
+#map-section{
+    background-color: burlywood;
+    margin: 0px 256px 64px;
+    padding: 12px;
+    min-inline-size: 640px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.map-container{
+    height: 100%;
+    flex-grow: 5;
+}
+
+gmp-map{
+    height: 100%;
+    border: dashed 2px black
+}
+
+.places-list{
     flex-grow: 1;
+    align-self: flex-start;
+    
 }
 
+.places-list h2{
+    margin-top: 0px;
+}
+
+#prefs-section{
+    font-size: 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form-element:not(:last-child){
+    background-color: burlywood;
+    border: solid 2px black;
+    padding: 12px;
+    width: 400px;
+    margin-block-end: 12px;
+}
+
+.form-element:last-child > input{
+    background-color: indianred;
+    border: solid 2px maroon;
+    padding: 12px;
+    width: 100px;
+    margin-block-start: 12px;
+    color: white;
+}
