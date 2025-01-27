@@ -12,8 +12,8 @@ var gMap = undefined
 
 
 function onLoad(){
-    initMap()
     renderPlaces()
+    initMap()
 }
 
 
