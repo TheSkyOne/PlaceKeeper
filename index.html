@@ -19,15 +19,28 @@
         </nav>
     </section>
     <main>
-        <div class="map"></div>
+        <!-- <div class="map-container">
+            <gmp-map
+                center="29.557669,34.951923"
+                zoom="13"
+                map-id="DEMO_MAP_ID"
+                style="height: 400px">
+            </gmp-map>
+        </div> -->
+        <gmp-map
+            center="29.557669,34.951923"
+            zoom="13"
+            map-id="DEMO_MAP_ID"
+            style="height: 400px">
+        </gmp-map>
         <aside class="places">
             <h2>Places</h2>
             <ul></ul>
         </aside>
     </main>
-
     
 
+    <script src="js/services/api-key-loader.service.js"></script>
     <script type="module" src="js/places-map.controller.js"></script>
 </body>
 

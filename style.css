@@ -1,0 +1,17 @@
+* {
+	box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    gap: 24px;
+}
+
+/* .map-container{
+    flex-grow: 3;
+} */
+
+aside{
+    flex-grow: 1;
+}
+

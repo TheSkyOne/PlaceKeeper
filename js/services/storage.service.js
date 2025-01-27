@@ -12,7 +12,7 @@ function query(entityType, delay = 1000){
 }
 
 
-async function get(entityType, entityId){
+async function get(entityType, entityId){ // getById
     const entities = await query(entityType)
     const entity = entities.find(entity => entity.id === entityId)
     if(!entity) throw new Error(`Get failed, cannot find entity with id: ${entityId} in: ${entityType}`)
@@ -20,7 +20,7 @@ async function get(entityType, entityId){
 }
 
 
-async function post(entityType, newEntity){
+async function post(entityType, newEntity){ // create
     const entities = await query(entityType)
     entities.push(newEntity)
     _save(entityType, entities)
