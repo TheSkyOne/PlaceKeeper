@@ -13,27 +13,13 @@
         <h1 id="title">Place Keeper</h1>
         <h3 id="subtitle">find your way back to your best places</h2>
         <nav>
-            <!-- <a href="">Home</a> -->
             <a href="#map-section">Map</a>
             <a href="#prefs-section">Preferences</a>
         </nav>
     </section>
     <main>
         <section id="map-section">
-            <div class="map-container">
-                <gmp-map
-                    center="29.557669,34.951923"
-                    zoom="13"
-                    map-id="DEMO_MAP_ID"
-                    style="height: 400px">
-                </gmp-map>
-            </div>
-            <!-- <gmp-map
-                center="29.557669,34.951923"
-                zoom="13"
-                map-id="DEMO_MAP_ID"
-                style="height: 400px">
-            </gmp-map> -->
+            <div class="map-container"></div>
             <aside class="places-list">
                 <h2>Places</h2>
                 <ul></ul>
@@ -75,10 +61,9 @@
             </form>
         </section>
     </main>
-    
 
-    <script src="js/services/api-key-loader.service.js"></script>
-    <script type="module" src="js/places-map.controller.js"></script>
+    <script src="js/services/maps-api-loader.service.js"></script>
+    <script type="module" src="js/places-map.controller.js" id="controller"></script>
     <script type="module" src="js/services/user.service.js"></script>
 </body>
 

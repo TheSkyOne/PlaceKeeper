@@ -68,14 +68,11 @@ nav a:not(:last-child)::after{
 }
 
 .map-container{
-    height: 100%;
+    border: dashed 2px black;
+    height: 400px;
     flex-grow: 5;
 }
 
-gmp-map{
-    height: 100%;
-    border: dashed 2px black
-}
 
 .places-list{
     flex-grow: 1;

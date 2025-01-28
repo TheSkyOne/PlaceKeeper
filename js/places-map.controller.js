@@ -13,37 +13,15 @@ var gMap = undefined
 
 function onLoad(){
     renderPlaces()
-    initMap()
 }
 
-
-// https://developers.google.com/maps/documentation/javascript/events#EventArguments
-// dynamic loading of the map as described in https://developers.google.com/maps/documentation/javascript/load-maps-js-api#migrate-to-dynamic
-// when using this, also go to api-key-loader.service.js and comment the first 'script.src' and uncomment the second one
-// async function initMap(){
-//     elMap = document.querySelector("gmp-map")
-//     const {Map} = await google.maps.importLibrary("maps")
-
-//     gMap = new Map(elMap, 
-//     {
-//         zoom: elMap.zoom,
-//         center: {lat:29.557669, lng: 34.951923},
-//         mapId: elMap.mapId
-//     })
-    
-//     console.log(gMap)
-//     gMap.addListener("click", (ev) => console.log(ev)) //why does this not work?
-// }
-
-
-// non-dynamic way of loading the map
-// when using this, also go to api-key-loader.service.js and uncomment the first 'script.src' and comment the second one
+//called as callback from the script that loads the google maps library
 function initMap() {
-    elMap = document.querySelector("gmp-map")
+    elMap = document.querySelector(".map-container")
     gMap = new google.maps.Map(elMap, {
-        zoom: elMap.zoom,
+        zoom: 13,
         center: {lat:29.557669, lng: 34.951923},
-        mapId: elMap.mapId
+        mapId: "DEMO_MAP_ID"
     });
 
     console.log(gMap)
