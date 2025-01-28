@@ -74,13 +74,13 @@ nav a:not(:last-child)::after{
 }
 
 
-.places-list{
+.places-container{
     flex-grow: 1;
     align-self: flex-start;
     
 }
 
-.places-list h2{
+.places-container h2{
     margin-top: 0px;
 }
 

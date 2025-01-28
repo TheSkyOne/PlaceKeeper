@@ -24,8 +24,7 @@ function initMap() {
         mapId: "DEMO_MAP_ID"
     });
 
-    console.log(gMap)
-    gMap.addListener("click", (ev) => console.log(ev))
+    gMap.addListener("click", _onMapClick)
   }
 window.initMap = initMap;
 
@@ -43,7 +42,7 @@ async function renderPlaces(){
         `
     });
 
-    const elList = document.querySelector("ul")
+    const elList = document.querySelector(".places-list")
     elList.innerHTML = html
 }
 
@@ -58,10 +57,10 @@ function onNavigate(placeId){
 }
 
 
-function _onMapClick(ev){
-    const name = prompt("Place Name?", "Place 1")
+async function _onMapClick(ev){
+    const name = prompt("Place Name?", "Place")
     const lat = ev.latLng.lat()
     const lng = ev.latLng.lng()
-    placeService.addPlace(lat, lng, name, gMap.getZoom())
+    await placeService.addPlace(lat, lng, name, gMap.getZoom())
     renderPlaces()
 }

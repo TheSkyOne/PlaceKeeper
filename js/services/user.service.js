@@ -34,7 +34,6 @@ function _registerEvents(){
                 case "txt-color":
                     document.querySelector("body").style.color = elInput.value
                     const linkEls = document.querySelectorAll("nav a")
-                    console.log(linkEls)
                     linkEls.forEach(elLink => elLink.style.color = elInput.value)
                     break
             }
@@ -44,14 +43,12 @@ function _registerEvents(){
     document.querySelector("form").addEventListener("submit",
         ev => {
             saveToStorage(storageKey, userPrefs)
-            console.log("form submitted")
         })
 }
 
 
 function _applyUserPrefs(){
     userPrefs = loadFromStorage(storageKey) || userPrefs
-    console.log(userPrefs)
     document.querySelector("#email").value = userPrefs.email
     document.querySelector("#age").value = userPrefs.age
     document.querySelector("#age-span").textContent = userPrefs.age
